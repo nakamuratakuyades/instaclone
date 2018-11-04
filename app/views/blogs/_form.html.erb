@@ -15,7 +15,9 @@
     <ul class="row">
         <ul class="list-group">
             <li class="col-xs-12 col-md-12">
-              <%= form.label :title %><%= form.text_field :title %><%= form.label :content %><%= form.text_field :content %><%= form.label :image %><%= form.file_field :image %><%= image_tag(@blog.image.url) if @blog.image.url %>
+              <%= form.label :title %><%= form.text_field :title %><br>
+              <%= form.label :content %><%= form.text_field :content %><br>
+              <%= form.label :image %><%= form.file_field :image %><%= image_tag(@blog.image.url) if @blog.image.url %><br>
             </li>
         </ul>
     </ul>

@@ -21,7 +21,8 @@
         <ul class="list-group">
             <li class="col-xs-12 col-md-12">
               <th><%= form.label :title %></th><th><%= form.text_field :title %></th>
-              <th><%= form.label :content %></th><th><%= form.text_field :content %></th>
+              <th><%= form.label :content %></th><th><%= form.text_field :content %></th><br>
+              <br>
               <th><%= form.label :image %><%= image_tag(@blog.image.url) if @blog.image.url %><%= form.file_field :image %></th>
             </li>
         </ul>

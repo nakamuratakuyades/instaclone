@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user,{only:[:new, :edit, :update, :destroy, :show, :index]}
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
 
   def index
     @blogs = Blog.all.order(created_at: :desc)
@@ -47,6 +49,8 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    @blog.user_id = current_user.id
+    render :index if @blog.invalid?
   end
 
   def update
@@ -66,6 +70,14 @@ class BlogsController < ApplicationController
 
   def contact
 
+  end
+
+  def ensure_correct_user
+    @blog = Blog.find_by(id: params[:id])
+    if @blog.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/blogs")
+    end
   end
 
   private

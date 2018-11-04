@@ -14,27 +14,26 @@
   </div>
 <% end %>
 
+<div class="field">
 
 <%= form_with(model: @user, local: true) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email %><br>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
 
-  <div class="field">
-    <%= form.label :image %><%= form.file_field :image %>
-    <%= image_tag(@user.image.url) if @user.image.url %>
-  </div>
+  <%= form.label :image %><%= form.file_field :image %>
+  <%= image_tag(@user.image.url) if @user.image.url %>
 
-  <button class="btn" type="submit">新規登録</button>
+  <br><button class="btn" type="submit">新規登録</button>
 <% end %>
-
+</div>
 
 <% end %>

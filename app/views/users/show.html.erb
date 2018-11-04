@@ -1,5 +1,7 @@
 <h1><%= @user.name %>のページ</h1>
 
-<h4>メールアドレス: <%= @user.email %></h4><h4><a class="btn" href="/likes" role="button">お気に入り一覧</a></h4><br>
+<h4>メールアドレス: <%= @user.email %></h4><br>
 
-<%= image_tag @user.image.url unless @user.image.blank? %>
+<%= image_tag @user.image.url unless @user.image.blank? %><br>
+
+<a class="btn" href="/likes" role="button">お気に入り一覧</a>

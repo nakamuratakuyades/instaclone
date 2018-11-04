@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   protect_from_forgery except: :search # searchアクションを除外
-  before_action :authenticate_user,{only:[:index, :edit, :update]}
+  before_action :authenticate_user,{only:[:index, :edit, :update, :show, :likes]}
 
   def new
     if params[:back]
