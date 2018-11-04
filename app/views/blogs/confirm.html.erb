@@ -5,10 +5,10 @@
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <tr>
-    <th>タイトル</th><th><%= @blog.title %></th>
+    <th><%= @blog.title %></th>
   </tr>
   <tr>
-    <th>本文</th><th><%= @blog.content %></th>
+    <th><%= @blog.content %></th>
   </tr>
   </table>
   <%= image_tag(@blog.image.url) %>

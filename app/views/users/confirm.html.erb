@@ -1,6 +1,7 @@
 <h3>以下の内容で、登録する。</h3>
 
-<table class="table table-striped">
+<div class="container">
+
 <%= form_with(model: @user, url: users_path, local: true) do |form| %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :email %>
@@ -8,16 +9,21 @@
   <%= form.hidden_field :password_confirmation %>
   <%= form.hidden_field :image_cache %>
 
-  <tr>
-    <th>名前</th><th><%= @user.name %></th>
-  </tr>
-  <tr>
-    <th>メールアドレス</th><th><%= @user.email %></th>
-  </tr>
-  </table>
-  <%= image_tag(@user.image.url) unless @user.image.blank? %><p>
+    <ul class="row">
+        <ul class="list-group2">
+            <li class="col-xs-12 col-md-12">
+              名前：<%= @user.name %>
+            </li>
+            <li class="col-xs-12 col-md-12">
+              メールアドレス：<%= @user.email %>
+            </li>
+            <li class="col-xs-12 col-md-12">
+              <%= image_tag(@user.image.url) unless @user.image.blank? %>
+            </li>
+        </ul>
+    </ul>
+    <button class="btn" type="submit">登録する</button><p>
 
-  <button class="btn" type="submit">登録する</button><p>
 <% end %>
 
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
@@ -28,3 +34,5 @@
   <%= form.hidden_field :image_cache %>
   <button class="btn" type="submit" name="back" >もどる</button>
 <% end %>
+
+</div>

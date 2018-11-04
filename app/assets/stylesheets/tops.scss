@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  background-color: #e9e9e9;
+  background-color: #996699;
   height: 54px;
 }
 
@@ -21,25 +21,23 @@ header li {
   width: auto;
 }
 
-header ul:after {
+header ul :after {
   content: "";
   display: block;
   clear: both;
 }
 
 .main-header {
-  padding-bottom: 15%;
   width: 100%;
   background-size: cover;
-  background-image: url("backlit-beach-color-258109.jpg");
+  background-image: url("");
   background-attachment: fixed;
 }
 
 .main-header img {
   display: block;
-  margin: 0 auto;
-  width: 50%;
-  padding-top: 15%;
+  width: 100%;
+  height: 100%;
 }
 
 .about {
@@ -67,14 +65,15 @@ header ul:after {
 }
 
 footer {
-  width: 100%;
-  background-color:grey;
-  padding: 20px 0 10px 0;
-  color: white;
+  background-color : #FFDDFF;
+  padding: 10px 0 10px 0;
+  color: black;
   margin: auto;
   font-size: 12px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  width: 95%;
+  height: 70px;
 }
 
 html {

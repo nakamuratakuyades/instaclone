@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>新規登録</h1>
 <p><%= notice %></p>
 
 <%= form_with(model: @user, local: true, url:users_confirm_path) do |form| %>
@@ -29,9 +29,8 @@
   <%= f.password_field :password_confirmation %>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image %><%= form.file_field :image %>
     <%= image_tag(@user.image.url) if @user.image.url %>
-    <%= form.file_field :image %>
   </div>
 
   <button class="btn" type="submit">新規登録</button>

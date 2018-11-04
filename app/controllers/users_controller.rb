@@ -34,7 +34,11 @@ class UsersController < ApplicationController
   end
 
   def update
+  end
 
+  def likes
+    @user = current_user
+    @favorites_blogs = @user.favorites
   end
 
   # DELETE /feeds/1

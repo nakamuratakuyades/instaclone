@@ -14,17 +14,20 @@
     </div>
   <% end %>
 
-<table class="table table-striped">
-  <div class="blog_title">
-    <tr>
-      <th><%= form.label :title %></th><th><%= form.text_field :title %></th>
-    </tr>
+
+
+  <div class="container">
+    <ul class="row">
+        <ul class="list-group">
+            <li class="col-xs-12 col-md-12">
+              <th><%= form.label :title %></th><th><%= form.text_field :title %></th>
+              <th><%= form.label :content %></th><th><%= form.text_field :content %></th>
+              <th><%= form.label :image %><%= image_tag(@blog.image.url) if @blog.image.url %><%= form.file_field :image %></th>
+            </li>
+        </ul>
+    </ul>
+    <button class="btn" type="submit">更新する</button>
   </div>
-  <div class="blog_title">
-    <tr>
-      <th><%= form.label :content %></th><th><%= form.text_field :content %></th>
-    </tr>
-  </div>
-  </table>
-  <button class="btn" type="submit">更新する</button>
+
+
 <% end %>

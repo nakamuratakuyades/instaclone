@@ -1,0 +1,11 @@
+<h1>お気に入り</h1><%= link_to "戻る", :back, class: 'btn' %>
+
+<div class="container">
+  <ul class="row">
+    <% @favorites_blogs.each do |favorites_blog| %>
+      <% blog = Blog.find_by(id: favorites_blog.blog_id) %>
+        <ul class="list-group">
+          <li class="col-xs-12 col-md-3"><%= blog.user.name %><p><p><%= blog.title %>  / <%= blog.content %></li>
+    <% end %>
+  </ul>
+</div>

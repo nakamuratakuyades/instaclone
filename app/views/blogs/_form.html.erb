@@ -11,26 +11,15 @@
     </div>
   <% end %>
 
-<table class="table table-striped">
-  <div class="blog_title">
-    <tr>
-      <th><%= form.label :title %></th><th><%= form.text_field :title %></th>
-    </tr>
+  <div class="container">
+    <ul class="row">
+        <ul class="list-group">
+            <li class="col-xs-12 col-md-12">
+              <%= form.label :title %><%= form.text_field :title %><%= form.label :content %><%= form.text_field :content %><%= form.label :image %><%= form.file_field :image %><%= image_tag(@blog.image.url) if @blog.image.url %>
+            </li>
+        </ul>
+    </ul>
+    <button class="btn" type="submit">登録する</button>
   </div>
 
-  <div class="blog_title">
-    <tr>
-      <th><%= form.label :content %></th><th><%= form.text_field :content %></th>
-    </tr>
-  </div>
-  </table>
-  <div class="field">
-    <%= form.label :image %>
-    <!-- 確認画面から新規作成画面に戻った時に、 -->
-    <!-- アップロードした画像を表示させるための記述 -->
-    <%= image_tag(@blog.image.url) if @blog.image.url %>
-    <%= form.file_field :image %>
-  </div>
-
-  <button class="btn" type="submit">登録する</button>
 <% end %>

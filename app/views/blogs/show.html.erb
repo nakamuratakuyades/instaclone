@@ -1,27 +1,25 @@
-<h1>ブログ詳細画面</h1>
+<h1><%= @user.name %>のPicture</h1>
+<div class="container">
+  <ul class="row">
+      <ul class="list-group2">
+          <li class="col-xs-12 col-md-12">
+            <%= @user.name %>
+          </li>
+          <%= image_tag @blog.image.url %>
+          <li class="col-xs-12 col-md-12">
+            <%= @blog.title %>
+          </li>
+          <li class="col-xs-12 col-md-12">
+            <%= @blog.content %>
+          </li>
+      </ul>
+      <% unless @blog.user_id == current_user.id %>
+        <% if @favorite.present? %>
+          <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+        <% else %>
+          <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+        <% end %>
+      <% end %>
 
-<table class="table table-striped">
-  <tr>
-    <th>ユーザー名</th></th><th><%= @user.name %></th>
-  </tr>
-  <tr>
-    <th>タイトル</th><th><%= @blog.title %>
-  </tr>
-
-  <tr>
-    <th>内容</th></th><th><%= @blog.content %></th>
-  </tr>
-</table>
-<p>
-  <%= image_tag @blog.image.url %>
-</p>
-
-<% unless @blog.user_id == current_user.id %>
-  <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
-
-<a class="btn" href="/blogs" role="button">もどる</a>
+      <a class="btn" href="/blogs" role="button">もどる</a>
+</div>
